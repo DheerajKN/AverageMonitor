@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: AverageMonitor
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:file:./data/average-monitor;AUTO_SERVER=TRUE}
+    username: ${DATABASE_USERNAME:sa}
+    password: ${DATABASE_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console:
+      enabled: false
+
+server:
+  shutdown: graceful
+
+logging:
+  level:
+    root: INFO
+    com.coolplanet.averagemonitor: DEBUG
