@@ -35,6 +35,7 @@ public class TaskStatisticsController {
     // 3. Predictable status codes with Swagger docs
     // 4. Integrate OpenTelemetry with a collector + Prometheus for metrics and Grafana/Tempo for distributed
     //    tracing, so request latencies, error rates and task execution trends can be monitored over time
+    // 5. Can also add authentication to allow only authorized personnel to publish and view data
     @PostMapping("/{taskId}/executions")
     public ResponseEntity<Void> recordExecution(@PathVariable String taskId,
                                                 @Valid @RequestBody TaskExecutionRequest request) {
